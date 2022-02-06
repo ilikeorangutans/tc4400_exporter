@@ -1,0 +1,74 @@
+<html>
+
+<head>
+      <meta HTTP-EQUIV='Pragma' CONTENT='no-cache'>
+      <link rel="stylesheet" href='stylecminfo.css' type='text/css'>
+      <link rel="stylesheet" href='colors.css' type='text/css'>
+      <title>Residential Getway Configuration: Status - Software</title>
+</head>
+
+<body>
+<blockquote>
+    <h1>Status</h1>
+    <h3>Software</h3>
+    <p>This page displays information on the current system software.</p>
+    <p>
+    <script language='javascript'>
+    var userName = 'support'
+	var IPDisplayEnable = 'Enabled';
+	var IPAddrValue =  'Ipv4 and Ipv6 are Hidden';
+	var SysTimeUp =  '15 days 01h:15m:07s.00';
+	var NetworkAccess =  'Allowed';
+	var BoardTemperature =  'Not Available';
+	var arr, body, tab, tr, td, tn, row, col,bc;
+	if(IPDisplayEnable == "Enabled" || userName == "support")
+		IPAddrValue = 'IPv4=0.0.0.0 IPv6=aaaa:bbbb:cccc:dddd:eeee:ffff:aaaa:bbbb';
+	arr = [	["Status"],
+	["System Up Time",SysTimeUp],
+	["Network Access",NetworkAccess],
+	["Cable Modem IP Address",IPAddrValue]
+	];
+	body = document.getElementsByTagName('body')[0];
+	bc = document.createElement('BLOCKQUOTE');
+	tab = document.createElement('table');
+	for (row = 0; row < arr.length; row++){
+		tr = document.createElement('tr');
+		for (col = 0; col < arr[row].length; col++){
+			td = document.createElement('td');
+			tn = document.createTextNode(arr[row][col]);
+			td.appendChild(tn);
+			tr.appendChild(td);
+			td.style.border = "thin inset black";
+			td.style.padding = "3px 5px 3px 5px";
+			if(row == 0){
+				td.colSpan ="2";
+			}
+			if(col == 0 && row != 0){
+				td.style.background = "rgb(200,200,200)";
+				td.style.fontWeight = "bold";
+                        }
+			if(col == 0 && row == 0){
+				td.style.fontSize = "larger";
+				td.style.fontWeight = "900";
+			}
+		}
+		tab.appendChild(tr);
+	}
+	bc.appendChild(tab);
+	body.appendChild(bc);
+
+   </script>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr><th colspan=2><b>Information</b></th></tr>
+<tr><td class='hd'><b>Standard Specification Compliant</b></td><td>Docsis 3.1</td></tr>
+<tr><td class='hd'><b>Hardware Version</b></td><td>TC4400 Rev:3.0.0</td></tr>
+<tr><td class='hd'><b>Software Version</b></td><td>CHR_SR70.14.04R1</td></tr>
+<tr><td class='hd'><b>Cable Modem MAC Address</b></td><td>aa:bb:cc:dd:ee:ff</td></tr>
+<tr><td class='hd'><b>Cable Modem Serial Number</b></td><td>CP1730HD6ZN</td></tr>
+<tr><td class='hd'><b>CM certificate</b></td><td>Installed</td></tr>
+</table>
+</p>
+</blockquote>
+</body>
+
+</html>
